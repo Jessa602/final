@@ -1,7 +1,8 @@
 import React from "react";
-import AllProducts from "./Products";
-import "./products.css";
+import { Link } from "react-router-dom"; // Import Link
 import { BsFillCartPlusFill, BsCartDashFill } from "react-icons/bs";
+import { BiSolidDetail } from "react-icons/bi";
+import Content from "./ExpandedCard";
 
 export default function SingleProduct({ product }) {
   return (
@@ -11,15 +12,15 @@ export default function SingleProduct({ product }) {
         <div className="card-details">
           <h5 className="card-title">{product.title}</h5>
           <p className="card-category">{product.category}</p>
-          <p className="card-description">{product.description}</p>
-          <p className="card-price">${product.price}</p>
+          <p className="card-price">
+            <b>${product.price}</b>
+          </p>
           <div className="add-to-cart">
             <BsFillCartPlusFill size={32} />
-            {/* <input
-            value={cartItems[id]}
-            onChange={(e) => updateCartItemCount(Number(e.target.value), id)}
-          /> */}
             <BsCartDashFill size={32} />
+          </div>
+          <div className="card-details">
+            <Content description={product.description} />
           </div>
         </div>
       </section>
