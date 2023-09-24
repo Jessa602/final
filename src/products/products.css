@@ -1,15 +1,8 @@
 .card-container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  border-radius: 1rem;
-  align-items: center;
-  gap: 10px;
-  gap: 10px 20px;
-  padding: auto;
-  margin: 0.5rem;
-  height: 20rem;
-  width: 100%;
+  margin-left: 20rem;
+  margin-top: 2rem;
   z-index: -2;
 }
 
@@ -23,14 +16,21 @@
 
 .card {
   margin: 20px;
-  border: 2px solid #ededed;
+  border: 2px solid #2d041b;
+  border-bottom-width: 5px;
   padding: 20px;
+  background-color: rgb(133, 111, 133);
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
   cursor: pointer;
 }
 
 .card-img {
   width: 13rem;
   margin-bottom: 1rem;
+  border: 2px solid #2d041b;
+  width: 200px;
+  height: 250px;
 }
 
 .card-title {
