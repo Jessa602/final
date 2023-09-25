@@ -26,6 +26,9 @@ export default function AllProducts() {
 
   return (
     <>
+      <div className="search-container">
+        <input type="text" placeholder="Search" />
+      </div>
       <section className="card-container">
         {products.map((product, index) => (
           <Card

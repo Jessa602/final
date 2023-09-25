@@ -58,10 +58,18 @@
 
 .card-price {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 .bag-icon {
   color: #535353;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  margin-left: 10rem;
 }
