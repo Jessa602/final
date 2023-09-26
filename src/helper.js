@@ -46,82 +46,82 @@ export const getCategory = async (category) => {
   return products;
 };
 
-///All carts
-export const getCarts = async () => {
-  const response = await fetch(CART_URL);
-  const carts = await response.json();
-  return carts;
-};
+// ///All carts
+// export const getCarts = async () => {
+//   const response = await fetch(CART_URL);
+//   const carts = await response.json();
+//   return carts;
+// };
 
-///Single cart
-export const getCart = async (id) => {
-  const response = await fetch(`${CART_URL}/${id}`);
-  const cart = await response.json();
-  return cart;
-};
+// ///Single cart
+// export const getCart = async (id) => {
+//   const response = await fetch(`${CART_URL}/${id}`);
+//   const cart = await response.json();
+//   return cart;
+// };
 
-///Sort carts descending
-export const sortCartsDesc = async (sort) => {
-  const response = await fetch(`${CART_URL}?sort=desc/${sort}`);
-  const carts = await response.json();
-  return carts;
-};
+// ///Sort carts descending
+// export const sortCartsDesc = async (sort) => {
+//   const response = await fetch(`${CART_URL}?sort=desc/${sort}`);
+//   const carts = await response.json();
+//   return carts;
+// };
 
-///Sort carts ascending
-export const sortCartsAsc = async (sort) => {
-  const response = await fetch(`${CART_URL}?sort=asc/${sort}`);
-  const carts = await response.json();
-  return carts;
-};
+// ///Sort carts ascending
+// export const sortCartsAsc = async (sort) => {
+//   const response = await fetch(`${CART_URL}?sort=asc/${sort}`);
+//   const carts = await response.json();
+//   return carts;
+// };
 
-///Get carts by date range
-export const getCartsByDate = async (date) => {
-  const response = await fetch(`${CART_URL}?startdate=${date}`);
-  const carts = await response.json();
-  return carts;
-};
+// ///Get carts by date range
+// export const getCartsByDate = async (date) => {
+//   const response = await fetch(`${CART_URL}?startdate=${date}`);
+//   const carts = await response.json();
+//   return carts;
+// };
 
-///Get user Cart
-export const getUserCart = async (id) => {
-  const response = await fetch(`${CART_URL}/user/${id}`);
-  const cart = await response.json();
-  return cart;
-};
+// ///Get user Cart
+// export const getUserCart = async (id) => {
+//   const response = await fetch(`${CART_URL}/user/${id}`);
+//   const cart = await response.json();
+//   return cart;
+// };
 
 ///Add to cart
-export const addToCart = async (id, product) => {
-  const response = await fetch(`${CART_URL}/${id}`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(product),
-  });
-  const cart = await response.json();
-  return cart;
-};
+// export const addToCart = async (id, product) => {
+//   const response = await fetch(`${CART_URL}/${id}`, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(product),
+//   });
+//   const cart = await response.json();
+//   return cart;
+// };
 
-///Update cart
-export const updateCart = async (id, product) => {
-  const response = await fetch(`${CART_URL}/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(product),
-  });
-  const cart = await response.json();
-  return cart;
-};
+// ///Update cart
+// export const updateCart = async (id, product) => {
+//   const response = await fetch(`${CART_URL}/${id}`, {
+//     method: "PUT",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(product),
+//   });
+//   const cart = await response.json();
+//   return cart;
+// };
 
-///Delete cart
-export const deleteCart = async (id) => {
-  const response = await fetch(`${CART_URL}/${id}`, {
-    method: "DELETE",
-  });
-  const cart = await response.json();
-  return cart;
-};
+// ///Delete cart
+// export const deleteCart = async (id) => {
+//   const response = await fetch(`${CART_URL}/${id}`, {
+//     method: "DELETE",
+//   });
+//   const cart = await response.json();
+//   return cart;
+// };
 
 ///All users
 export const getUsers = async () => {
@@ -205,15 +205,15 @@ export default {
   sortProductsAsc,
   getCategories,
   getCategory,
-  getCarts,
-  getCart,
-  sortCartsDesc,
-  sortCartsAsc,
-  getCartsByDate,
-  getUserCart,
-  addToCart,
-  updateCart,
-  deleteCart,
+  // getCarts,
+  // getCart,
+  // sortCartsDesc,
+  // sortCartsAsc,
+  // getCartsByDate,
+  // getUserCart,
+  // addToCart,
+  // updateCart,
+  // deleteCart,
   getUsers,
   getUser,
   createUser,

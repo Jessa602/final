@@ -5,19 +5,18 @@ import AllProducts from "./products/Products";
 import DetailCard from "./products/DetailCard";
 import Nav from "./Nav/Nav";
 import { GiGems } from "react-icons/gi";
+import { Cart } from "./Cart/Cart";
+import SideBar from "./SideBar/SideBar";
+import { Header } from "./headFoot/Header";
 
 function App() {
   return (
     <>
-      <Nav />
-      <div className="title-container">
-        <h1 className="site-title">
-          Jess's Gems <GiGems />{" "}
-        </h1>
-      </div>
+      <Header />
+
       <Routes>
         <Route path="/" element={<AllProducts />} />
-        <Route path="/DetailCard" element={<DetailCard />} />
+        <Route path="/Cart" element={<Cart />} />
       </Routes>
     </>
   );

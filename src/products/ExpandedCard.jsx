@@ -22,9 +22,7 @@ const ReadMore = ({ children }) => {
 const Content = ({ description }) => {
   return (
     <div className="container2">
-      <p>
-        <ReadMore>{description}</ReadMore>
-      </p>
+      <ReadMore>{description}</ReadMore>
     </div>
   );
 };

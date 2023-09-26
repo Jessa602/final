@@ -1,10 +1,26 @@
-import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom"; // Import Link
 import { BsFillCartPlusFill, BsCartDashFill } from "react-icons/bs";
 import { BiSolidDetail } from "react-icons/bi";
 import Content from "./ExpandedCard";
+import CartContext from "../context/cartContext";
 
-export default function SingleProduct({ product }) {
+export default function Card({ product }) {
+  const {
+    id,
+    image,
+    title,
+    category,
+    price,
+    description,
+    addToCart,
+    removeFromCart,
+  } = useContext(CartContext);
+
+  const handleAddToCart = () => {
+    addToCart(id);
+  };
+
   return (
     <>
       <section className="card">
@@ -16,8 +32,8 @@ export default function SingleProduct({ product }) {
             <b>${product.price}</b>
           </p>
           <div className="add-to-cart">
-            <BsFillCartPlusFill size={32} />
-            <BsCartDashFill size={32} />
+            <BsFillCartPlusFill size={32} onClick={() => addToCart(product)} />
+            {/* <BsCartDashFill size={32} onClick={() => removeFromCart(id)} /> */}
           </div>
           <div className="card-details">
             <Content description={product.description} />
