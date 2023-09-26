@@ -1,20 +1,21 @@
 // Cart.jsx
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { useCart } from "../context/cartContext";
+import CartContext from "../context/cartContext";
 import { CartItem } from "./CartItem";
 import "./cart.css";
+import Card from "../products/Card";
 
 export const Cart = () => {
-  const { cart, getTotalCartAmount, checkout } = useCart(); // Use useCart hook to get the context values
+  const { cart, getTotalCartAmount, checkout } = useContext(CartContext);
   const navigate = useNavigate();
-
+  console.log("cart Page", cart);
   return (
     <div className="cart">
       <h1>Your Cart</h1>
       <div className="cartItem">
         {Object.keys(cart).map((productId) => (
-          <CartItem key={productId} item={cart[productId]} />
+          <Card key={productId} product={cart[productId]} />
         ))}
       </div>
 

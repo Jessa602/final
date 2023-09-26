@@ -5,7 +5,7 @@ import { BiSolidDetail } from "react-icons/bi";
 import Content from "./ExpandedCard";
 import CartContext from "../context/cartContext";
 
-export default function SingleProduct({ product }) {
+export default function Card({ product }) {
   const {
     id,
     image,
@@ -32,7 +32,7 @@ export default function SingleProduct({ product }) {
             <b>${product.price}</b>
           </p>
           <div className="add-to-cart">
-            <BsFillCartPlusFill size={32} onClick={() => addToCart(id)} />
+            <BsFillCartPlusFill size={32} onClick={() => addToCart(product)} />
             {/* <BsCartDashFill size={32} onClick={() => removeFromCart(id)} /> */}
           </div>
           <div className="card-details">

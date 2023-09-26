@@ -5,29 +5,31 @@ import products from "../products/Products";
 const CartContext = createContext(null);
 
 const getDefaultCart = () => {
-  let cart = {};
-  for (let i = 1; i < products.length + 1; i++) {
-    cart[i] = 0;
-  }
-  return cart;
+  let storedCart = localStorage.getItem("cart");
+
+  return storedCart ? JSON.parse(storedCart) : {};
 };
 
 export const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState(getDefaultCart());
 
   const getTotalCartAmount = () => {
-    let totalAmount = 0;
-    for (const product in cart) {
-      if (cart[product] > 0) {
-        let productInfo = products.find((prod) => prod.id === Number(product));
-        totalAmount += cart[product] * productInfo.price;
-      }
-    }
+    let totalAmount = Object.values(cart).reduce((acc, product) => {
+      return acc + product.count * product.price;
+    }, 0);
+
     return totalAmount;
   };
 
-  const addToCart = (productId) => {
-    setCart((prev) => ({ ...prev, [productId]: prev[productId] + 1 }));
+  const addToCart = (product) => {
+    if (product.id in cart) {
+      cart[product.id].count += 1;
+      setCart((prev) => ({ ...prev }));
+    } else {
+      product.count = 1;
+
+      setCart((prev) => ({ ...prev, [product.id]: { ...product } }));
+    }
     localStorage.setItem("cart", JSON.stringify(cart));
   };
 
