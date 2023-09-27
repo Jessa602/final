@@ -8,6 +8,7 @@ import { GiGems } from "react-icons/gi";
 import { Cart } from "./Cart/Cart";
 import SideBar from "./SideBar/SideBar";
 import { Header } from "./headFoot/Header";
+import FilterSearchBar from "./components/Search";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<AllProducts />} />
         <Route path="/Cart" element={<Cart />} />
+        <Route path="/search" element={<FilterSearchBar />} />
       </Routes>
     </>
   );
