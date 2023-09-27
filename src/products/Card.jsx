@@ -31,10 +31,12 @@ export default function Card({ product }) {
           <p className="card-price">
             <b>${product.price}</b>
           </p>
-          <div className="add-to-cart">
-            <BsFillCartPlusFill size={32} onClick={() => addToCart(product)} />
-            {/* <BsCartDashFill size={32} onClick={() => removeFromCart(id)} /> */}
+          <BsFillCartPlusFill size={32} onClick={() => addToCart(product)} />
+          <div className="card-count">
+            <input value={product.count} readOnly={true} />
           </div>
+          <BsCartDashFill size={32} onClick={() => removeFromCart(product)} />
+
           <div className="card-details">
             <Content description={product.description} />
           </div>
