@@ -1,7 +1,7 @@
 import { FiHeart } from "react-icons/fi";
 import { AiOutlineShoppingCart, AiOutlineUserAdd } from "react-icons/ai";
 import "./Nav.css";
-import Search from "./Search";
+import Search from "../components/Search";
 import { CartItem } from "../Cart/CartItem";
 import { Cart } from "../Cart/Cart";
 import { useNavigate } from "react-router-dom";
