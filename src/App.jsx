@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<AllProducts />} />
         <Route path="/Cart" element={<Cart />} />
-        <Route path="/search" element={<FilterSearchBar />} />
+        <Route path="/search" element={FilterSearchBar} />
       </Routes>
     </>
   );
