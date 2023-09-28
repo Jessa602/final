@@ -1,7 +1,6 @@
 import Category from "./Category/Category.jsx";
 import Price from "./Price/Price.jsx";
 import Gender from "./Gender/Gender.jsx";
-
 import "../SideBar/sidebar.css";
 
 const Sidebar = ({ handleChange }) => {

@@ -6,7 +6,7 @@ import Sidebar from "./SideBar/SideBar";
 import Card from "./products/Card";
 import "./index.css";
 
-function App(products, product, Products, Product) {
+function Handles(products, product, Products, Product) {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   // ----------- Input Filter -----------
@@ -83,4 +83,4 @@ function App(products, product, Products, Product) {
   );
 }
 
-export default App;
+export default Handles;
