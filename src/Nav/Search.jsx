@@ -17,4 +17,4 @@ const FilterSearchBar = ({ query, setQuery }) => {
   );
 };
 
-export default FilterSearchBar;
+export { FilterSearchBar };

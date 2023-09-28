@@ -25,6 +25,21 @@
   cursor: pointer;
 }
 
+.card-count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-count > * {
+  flex: 1 1 160px;
+  width: 20px;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
 .card-img {
   width: 13rem;
   margin-bottom: 1rem;

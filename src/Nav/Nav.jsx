@@ -1,7 +1,7 @@
 import { FiHeart } from "react-icons/fi";
 import { AiOutlineShoppingCart, AiOutlineUserAdd } from "react-icons/ai";
 import "./Nav.css";
-import Search from "./Search";
+
 import { CartItem } from "../Cart/CartItem";
 import { Cart } from "../Cart/Cart";
 import { useNavigate } from "react-router-dom";
@@ -21,11 +21,14 @@ const Nav = () => {
           />
         </a>
         <a href="">
-          <AiOutlineUserAdd className="nav-icons" />
+          <AiOutlineUserAdd
+            className="nav-icons"
+            onClick={() => navigate("./Profile")}
+          />
         </a>
       </div>
     </nav>
   );
 };
 
-export default Nav;
+export default { Nav };
