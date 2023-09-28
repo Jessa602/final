@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { getProducts } from "../helper";
 import Card from "./Card";
-import DetailCard from "./DetailCard";
+import ReadMore from "../products/ExpandedCard.jsx";
+import "./products.css";
 
 export default function AllProducts() {
   const [products, setProducts] = useState([]);

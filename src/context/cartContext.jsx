@@ -17,6 +17,7 @@ export const CartContextProvider = ({ children }) => {
     let totalAmount = Object.values(cart).reduce((acc, product) => {
       return acc + product.count * product.price;
     }, 0);
+    totalAmount = totalAmount.toFixed(2);
 
     return totalAmount;
   };
@@ -28,13 +29,20 @@ export const CartContextProvider = ({ children }) => {
     } else {
       product.count = 1;
 
-      setCart((prev) => ({ ...prev, [product.id]: { ...product } }));
+      setCart((prev) => ({ ...prev, [product.id]: { ...product } + 1 }));
     }
     localStorage.setItem("cart", JSON.stringify(cart));
   };
 
-  const removeFromCart = (productId) => {
-    setCart((prev) => ({ ...prev, [productId]: prev[productId] - 1 }));
+  const removeFromCart = (product) => {
+    if (product.id in cart) {
+      cart[product.id].count -= 1;
+      setCart((prev) => ({ ...prev }));
+    } else {
+      product.count = 1;
+
+      setCart((prev) => ({ ...prev, [product.id]: { ...product } - 1 }));
+    }
     localStorage.setItem("cart", JSON.stringify(cart));
   };
 
